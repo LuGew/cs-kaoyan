@@ -6,20 +6,22 @@
         <groupId>com.lugew.cs-kaoyan</groupId>
         <artifactId>parent</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>data-structure-algorithm</artifactId>
+    <groupId>com.lugew.cs-kaoyan</groupId>
+    <artifactId>computer-network</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data-structure-algorithm</name>
+    <name>computer-network</name>
     <description>Demo project for Spring Boot</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-    </dependencies>
+
+       </dependencies>
+
 
 </project>
