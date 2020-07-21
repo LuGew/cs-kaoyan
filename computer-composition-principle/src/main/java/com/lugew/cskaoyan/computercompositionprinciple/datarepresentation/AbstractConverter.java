@@ -9,9 +9,7 @@ import java.util.Map;
  */
 public abstract class AbstractConverter implements Converter {
     protected final String ZERO = "0";
-    protected final Numeration NUMERATION = Numeration.BINARY;
     protected final int PRECISION = 4;
-
     protected final Map<Character, Integer> characterIntegerMap = new HashMap<Character, Integer>() {
         {
             put('0', 0);
@@ -38,6 +36,7 @@ public abstract class AbstractConverter implements Converter {
             put('F', 15);
         }
     };
+    protected Numeration numeration;
 
     @Override
     public String convert(Numeration numeration, String input) {
@@ -46,12 +45,16 @@ public abstract class AbstractConverter implements Converter {
 
     public String takeTheRemainderByDividingTheBase(Integer input) {
         StringBuilder result = new StringBuilder();
-        Integer radix = NUMERATION.getRadix();
+        Integer radix = getNumeration().getRadix();
         while (input != 0) {
             result.insert(0, input % radix);
             input /= radix;
         }
         return result.toString();
+    }
+
+    public Numeration getNumeration() {
+        return numeration;
     }
 
     public String roundingByRadix(Integer input) {
@@ -61,7 +64,7 @@ public abstract class AbstractConverter implements Converter {
         int tempInput = input;
         int target = 1000000000;
         int tempInteger = 0;
-        int radix = NUMERATION.getRadix();
+        int radix = getNumeration().getRadix();
         while (true) {
             tempInput *= radix;
             tempInteger = tempInput / b;

@@ -7,6 +7,10 @@ package com.lugew.cskaoyan.computercompositionprinciple.datarepresentation;
  * @since 2020/7/20
  */
 public class BinaryConverter extends AbstractConverter {
+    public BinaryConverter() {
+        numeration = Numeration.BINARY;
+    }
+
     @Override
     public String convert(Numeration numeration, String input) {
         StringBuilder result = new StringBuilder();
@@ -38,7 +42,6 @@ public class BinaryConverter extends AbstractConverter {
 
         return result.toString();
     }
-
 
     public StringBuilder removeZero(StringBuilder input) {
         while (input.length() > 1 && 0 == input.indexOf(ZERO)) {

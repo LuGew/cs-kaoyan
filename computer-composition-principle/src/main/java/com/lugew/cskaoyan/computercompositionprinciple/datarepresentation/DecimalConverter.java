@@ -7,6 +7,10 @@ package com.lugew.cskaoyan.computercompositionprinciple.datarepresentation;
  * @since 2020/7/20
  */
 public class DecimalConverter extends AbstractConverter {
+    public DecimalConverter() {
+        numeration = Numeration.DECIMAL;
+    }
+
     @Override
     public String convert(Numeration numeration, String input) {
         double result = 0;

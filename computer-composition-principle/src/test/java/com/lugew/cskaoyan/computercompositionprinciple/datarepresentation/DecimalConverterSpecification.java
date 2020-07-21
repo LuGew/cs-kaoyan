@@ -28,4 +28,28 @@ class DecimalConverterSpecification {
         assertThat(converter.convert(Numeration.OCTAL, "10.01"))
                 .isEqualTo("8.015625");
     }
+
+    @Test
+    void whenBinary10Then2() {
+        assertThat(converter.convert(Numeration.BINARY, "10"))
+                .isEqualTo("2");
+    }
+
+    @Test
+    void whenBinary10dot01Then2dot25() {
+        assertThat(converter.convert(Numeration.BINARY, "10.01"))
+                .isEqualTo("2.25");
+    }
+
+    @Test
+    void whenHex10Then16() {
+        assertThat(converter.convert(Numeration.HEX, "10"))
+                .isEqualTo("16");
+    }
+
+    @Test
+    void whenHex10dot01Then16dot00390625() {
+        assertThat(converter.convert(Numeration.HEX, "10.01"))
+                .isEqualTo("16.00390625");
+    }
 }
