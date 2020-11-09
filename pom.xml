@@ -9,9 +9,12 @@
     <packaging>pom</packaging>
 
     <name>cs kao yan</name>
-    <description></description>
+    <description>考研408笔记</description>
     <modules>
+        <module>computer-network</module>
         <module>data-structure-algorithm</module>
+        <module>computer-composition-principle</module>
+        <module>computer-operating-system</module>
     </modules>
     <properties>
         <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
